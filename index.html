@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site de casamento de Karen Castro & Mateus Simões — 17 de dezembro de 2026.">
+  <meta name="theme-color" content="#879b83">
+  <title>Karen Castro & Mateus Simões | Nosso Casamento</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       PALETA — VERDE SÁLVIA
+       ========================================================= */
+    :root {
+      --sage-50:  #f7f9f5;
+      --sage-100: #eef2eb;
+      --sage-200: #dfe7dc;
+      --sage-300: #cbd8c7;
+      --sage-400: #b2c2ae;
+      --sage-500: #9caf98;
+      --sage-600: #879b83;
+      --sage-700: #6f846b;
+      --sage-800: #596c55;
+      --sage-900: #42513f;
+
+      --cream: #f4f1e9;
+      --gold: #b7a06a;
+      --text: #30372f;
+      --muted: #707970;
+      --white: #ffffff;
+
+      --shadow: 0 18px 50px rgba(66, 81, 63, 0.10);
+      --radius: 20px;
+    }
+
+    /* =========================================================
+       RESET / BASE
+       ========================================================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--sage-50);
+      color: var(--text);
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.7;
+      font-weight: 400;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.5;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    }
+
+    main,
+    .navbar,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    /* =========================================================
+       NAVEGAÇÃO (Padronizada para Desktop e Mobile)
+       ========================================================= */
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      padding: 14px 20px;
+      transition: all 0.3s ease;
+      background: var(--sage-900);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar.scrolled {
+      background: rgba(66, 81, 63, 0.95);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--sage-100);
+      font-weight: 500;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+    .hero {
+      min-height: 100svh;
+      padding: 90px 20px 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(156, 175, 152, 0.18), transparent 25%),
+        radial-gradient(circle at 92% 88%, rgba(135, 155, 131, 0.14), transparent 28%),
+        var(--sage-50);
+    }
+
+    .hero-content {
+      width: min(100%, 1050px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: var(--sage-700);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-family: "Italianno", cursive;
+      font-weight: 400;
+      font-size: clamp(4.2rem, 12vw, 8.5rem);
+      line-height: 1.1;
+      letter-spacing: 0;
+      color: var(--sage-900);
+      margin-bottom: 24px;
+    }
+
+    .hero-date {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.15rem, 3vw, 1.65rem);
+      color: var(--sage-700);
+      margin-bottom: 34px;
+    }
+
+    /* =========================================================
+       CARROSSEL MANUAL DE FOTOS COM TAG PICTURE
+       ========================================================= */
+    .carousel-container {
+      width: min(100%, 900px);
+      height: clamp(300px, 50vw, 500px);
+      margin: 0 auto 35px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+      border: 6px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .carousel-slide {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .carousel-slide picture {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--sage-900);
+      border: none;
+      font-size: 1.2rem;
+      padding: 8px 14px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255, 255, 255, 0.95);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .prev-btn {
+      left: 12px;
+    }
+
+    .next-btn {
+      right: 12px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 650px;
+      margin: auto;
+      gap: 4px;
+    }
+
+    .count-box {
+      padding: 10px 5px;
+      border-right: 1px solid var(--sage-300);
+    }
+
+    .count-box:last-child {
+      border-right: 0;
+    }
+
+    .count-number {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.8rem, 5vw, 2.7rem);
+      line-height: 1;
+      color: var(--sage-800);
+    }
+
+    .count-label {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       ESTRUTURA GERAL
+       ========================================================= */
+    section {
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1050px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      line-height: 1.2;
+      color: var(--sage-900);
+      margin-bottom: 13px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: auto;
+      font-size: 0.88rem;
+    }
+
+    .divider {
+      width: 130px;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--gold);
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.7;
+    }
+
+    .divider-heart {
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       NOSSA HISTÓRIA
+       ========================================================= */
+    .story {
+      background: var(--sage-100);
+      position: relative;
+    }
+
+    .story::before {
+      content: "♡";
+      position: absolute;
+      top: 45px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(111, 132, 107, 0.10);
+      font-family: "Playfair Display", serif;
+      font-size: 8rem;
+      line-height: 1;
+    }
+
+    .story-content {
+      max-width: 780px;
+      margin: auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .story-content p {
+      color: #5f695d;
+      margin-bottom: 18px;
+    }
+
+    .story-highlight {
+      margin-top: 35px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--sage-700) !important;
+    }
+
+    /* =========================================================
+       LOCAL E HORÁRIO
+       ========================================================= */
+    .location {
+      background: var(--sage-50);
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .cards .card {
+      width: min(100%, 520px);
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--sage-200);
+      border-radius: var(--radius);
+      padding: 38px 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 55px rgba(66, 81, 63, 0.14);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--sage-500);
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      color: var(--sage-900);
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 5px;
+    }
+
+    .time {
+      color: var(--sage-700) !important;
+      font-weight: 600;
+      margin: 12px 0 24px !important;
+    }
+
+    .address {
+      min-height: 50px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    /* =========================================================
+       BOTÕES (Padronizados)
+       ========================================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.66rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: var(--sage-700);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(111, 132, 107, 0.20);
+    }
+
+    .btn-primary:hover {
+      background: var(--sage-800);
+      transform: translateY(-2px);
+      box-shadow: 0 11px 25px rgba(89, 108, 85, 0.25);
+    }
+
+    .btn-secondary {
+      background: var(--sage-50);
+      border-color: var(--sage-300);
+      color: var(--sage-800);
+    }
+
+    .btn-secondary:hover {
+      background: var(--sage-100);
+      border-color: var(--sage-500);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       RSVP
+       ========================================================= */
+    .rsvp {
+      background:
+        radial-gradient(circle at 90% 15%, rgba(156, 175, 152, 0.20), transparent 25%),
+        var(--sage-100);
+    }
+
+    .form-wrapper {
+      max-width: 700px;
+      margin: auto;
+      background: var(--white);
+      padding: clamp(25px, 6vw, 50px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--sage-200);
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--sage-800);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid var(--sage-200);
+      border-radius: 10px;
+      padding: 13px 15px;
+      outline: none;
+      background: var(--sage-50);
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--sage-600);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(135, 155, 131, 0.14);
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 25px;
+    }
+
+    /* =========================================================
+       ACOMPANHANTES
+       ========================================================= */
+    .companions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .companion-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .companion-row input {
+      flex: 1;
+    }
+
+    .companion-remove {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--sage-300);
+      background: var(--sage-50);
+      color: var(--sage-700);
+      font-size: 1rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .companion-remove:hover {
+      background: var(--sage-100);
+      border-color: var(--sage-500);
+    }
+
+    .add-companion-btn {
+      align-self: flex-start;
+      background: none;
+      border: 1px dashed var(--sage-400);
+      color: var(--sage-700);
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .add-companion-btn:hover {
+      background: var(--sage-100);
+      border-color: var(--sage-600);
+    }
+
+    /* =========================================================
+       RODAPÉ
+       ========================================================= */
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      background: var(--sage-900);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer .names {
+      font-family: "Italianno", cursive;
+      font-weight: 400;
+      font-size: 3.4rem;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    footer .footer-heart {
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    /* =========================================================
+       ANIMAÇÕES AO ROLAR
+       ========================================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <nav class="navbar" id="navbar" aria-label="Navegação principal">
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#historia">Nossa História</a></li>
+        <li><a href="#local">Local</a></li>
+        <li><a href="#rsvp">Presença</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- 1. HERO / HOME -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          Com alegria, convidamos você para celebrar
+        </p>
+
+        <h1>
+          Karen e Mateus
+        </h1>
+
+        <p class="hero-date">
+          17 de Dezembro de 2026 · 18:00h
+        </p>
+
+        <!-- CARROSSEL DE FOTOS COM IMAGENS INDIVIDUAIS PARA MOBILE E DESKTOP -->
+        <div class="carousel-container">
+          <div class="carousel-slide" id="carouselSlide">
+            
+            <picture>
+              <source media="(max-width: 600px)" srcset="karen&mateus-capa-mobile.jpg">
+              <img src="karen&mateus-capa.jpg" alt="Foto 1 de Karen Castro e Mateus Simões">
+            </picture>
+
+            <picture>
+              <source media="(max-width: 600px)" srcset="karen&mateus-2-mobile.jpg">
+              <img src="karen&mateus-2.jpg" alt="Foto 2 de Karen Castro e Mateus Simões">
+            </picture>
+
+            <picture>
+              <source media="(max-width: 600px)" srcset="karen&mateus-3-mobile.jpg">
+              <img src="karen&mateus-3.jpg" alt="Foto 3 de Karen Castro e Mateus Simões">
+            </picture>
+
+            <picture>
+              <source media="(max-width: 600px)" srcset="karen&mateus-4-mobile.jpg">
+              <img src="karen&mateus-4.jpg" alt="Foto 4 de Karen Castro e Mateus Simões">
+            </picture>
+
+            <picture>
+              <source media="(max-width: 600px)" srcset="foto5-mobile.jpg">
+              <img src="foto5.jpg" alt="Foto 5 de Karen Castro e Mateus Simões">
+            </picture>
+
+          </div>
+
+          <button type="button" class="carousel-btn prev-btn" id="prevBtn" aria-label="Foto anterior">&#10094;</button>
+          <button type="button" class="carousel-btn next-btn" id="nextBtn" aria-label="Próxima foto">&#10095;</button>
+        </div>
+
+        <div class="countdown" id="countdown" aria-label="Contagem regressiva para o casamento">
+          <div class="count-box">
+            <span class="count-number" id="days">00</span>
+            <span class="count-label">Dias</span>
+          </div>
+
+          <div class="count-box">
+            <span class="count-number" id="hours">00</span>
+            <span class="count-label">Horas</span>
+          </div>
+
+          <div class="count-box">
+            <span class="count-number" id="minutes">00</span>
+            <span class="count-label">Minutos</span>
+          </div>
+
+          <div class="count-box">
+            <span class="count-number" id="seconds">00</span>
+            <span class="count-label">Segundos</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. NOSSA HISTÓRIA -->
+    <section class="story" id="historia">
+      <div class="section-inner reveal">
+
+        <div class="section-heading">
+          <p class="eyebrow">Dois caminhos, uma história</p>
+          <h2>Nossa História</h2>
+          <div class="divider"><span class="divider-heart">♡</span></div>
+        </div>
+
+        <div class="story-content">
+          <p>
+            Foi em 2019, em meio às cores, aos sorrisos e à folia de um bloquinho de carnaval, que nossos caminhos se encontraram pela primeira vez. Em meio à multidão, entre músicas e passos que se cruzavam, o destino, quase em silêncio, aproximou dois olhares. E foi ali, sem que soubéssemos, que nasceu a primeira linha de uma história que, desde então, o tempo jamais conseguiu apagar.
+          </p>
+          <p>
+            Desde aquele encontro, já se passaram sete carnavais, sete anos, sete voltas ao redor do sol. E, em cada uma delas, descobrimos novas razões para escolher um ao outro, para nos apaixonarmos outra vez. Vivemos risos que se tornaram memórias, atravessamos dias difíceis de mãos entrelaçadas e vimos nossos sonhos crescerem lado a lado. O tempo não nos afastou, ao contrário, fez florescer aquilo que nasceu por acaso, transformando um encontro em lar, um sentimento em certeza e dois caminhos em um só.
+          </p>
+          <p class="story-highlight">
+            E depois de sete carnavais, sete anos e uma vida de memórias, decidimos dizer sim para sempre.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. LOCAL E HORÁRIO -->
+    <section class="location" id="local">
+      <div class="section-inner reveal">
+
+        <div class="section-heading">
+          <p class="eyebrow">Onde vamos celebrar</p>
+          <h2>Local e Horário</h2>
+          <div class="divider"><span class="divider-heart">♡</span></div>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Cerimônia</h3>
+
+            <p class="address">
+              Rua Nogueira Acioli, 805<br>
+              Centro — Fortaleza | CE
+            </p>
+
+            <p class="time">18:00h</p>
+
+            <div class="buttons">
+              <a
+                class="btn btn-primary"
+                href="https://maps.app.goo.gl/GfBzdmcrS2V9X5Yx5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver no Google Maps
+              </a>
+
+              <a
+                class="btn btn-secondary"
+                href="https://www.waze.com/ul?q=Rua%20Nogueira%20Acioli%2C%20805%2C%20Fortaleza%20CE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Abrir no Waze
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. RSVP -->
+    <section class="rsvp" id="rsvp">
+      <div class="section-inner reveal">
+
+        <div class="section-heading">
+          <p class="eyebrow">Sua presença é muito especial</p>
+          <h2>Confirmação de Presença</h2>
+          <div class="divider"><span class="divider-heart">♡</span></div>
+          <p>
+            Confirme sua presença para nos ajudar a preparar tudo com carinho.
+          </p>
+        </div>
+
+        <div class="form-wrapper">
+          <form id="rsvpForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nome">Nome completo *</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Digite seu nome completo"
+                  autocomplete="name"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 20px;">
+              <label>Acompanhantes (Opcional)</label>
+              <div id="companionsList" class="companions-list"></div>
+              <button type="button" id="addCompanionBtn" class="add-companion-btn">+ Adicionar Acompanhante</button>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">Confirmar Presença</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer id="contato">
+    <div class="footer-heart" aria-hidden="true">♥</div>
+    <div class="names">Karen e Mateus</div>
+    <p>17 de Dezembro de 2026 · Com amor, esperamos por você</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Efeito do Navbar ao rolar a página
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Carrossel manual de fotos
+    const slide = document.getElementById('carouselSlide');
+    const items = slide ? slide.querySelectorAll('picture') : [];
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      if (slide) {
+        slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+    }
+
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+      });
+    }
+
+    // Contagem Regressiva
+    const weddingDate = new Date('2026-12-17T18:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = String(days).padStart(2, '0');
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Adicionar/Remover Acompanhantes
+    const addCompanionBtn = document.getElementById('addCompanionBtn');
+    const companionsList = document.getElementById('companionsList');
+
+    if (addCompanionBtn && companionsList) {
+      addCompanionBtn.addEventListener('click', () => {
+        const row = document.createElement('div');
+        row.className = 'companion-row';
+        row.innerHTML = `
+          <input type="text" name="acompanhante[]" placeholder="Nome do acompanhante" required>
+          <button type="button" class="companion-remove" aria-label="Remover acompanhante">&times;</button>
+        `;
+        row.querySelector('.companion-remove').addEventListener('click', () => {
+          row.remove();
+        });
+        companionsList.appendChild(row);
+      });
+    }
+
+    // Animação ao rolar (Reveal)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
