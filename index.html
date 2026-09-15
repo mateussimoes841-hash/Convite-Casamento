@@ -567,6 +567,29 @@
       margin-top: 25px;
     }
 
+    .form-status-message {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    .form-status-message.success {
+      display: block;
+      background-color: var(--sage-200);
+      color: var(--sage-900);
+      border: 1px solid var(--sage-400);
+    }
+
+    .form-status-message.error {
+      display: block;
+      background-color: #f8d7da;
+      color: #842029;
+      border: 1px solid #f5c2c7;
+    }
+
     /* =========================================================
        ACOMPANHANTES
        ========================================================= */
@@ -832,6 +855,7 @@
         </div>
       </div>
     </section>
+
     <!-- 4. RSVP -->
     <section class="rsvp" id="rsvp">
       <div class="section-inner reveal">
@@ -846,7 +870,7 @@
         </div>
 
         <div class="form-wrapper">
-          <form id="rsvpForm">
+          <form id="rsvpForm" action="https://formspree.io/f/meaojkgl" method="POST">
             <div class="form-grid">
               <div class="form-group">
                 <label for="nome">Nome completo *</label>
@@ -867,8 +891,10 @@
               <button type="button" id="addCompanionBtn" class="add-companion-btn">+ Adicionar Acompanhante</button>
             </div>
 
-            <button type="submit" class="btn btn-primary form-submit">Confirmar Presença</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary form-submit">Confirmar Presença</button>
           </form>
+
+          <div id="formStatus" class="form-status-message" role="alert"></div>
         </div>
 
       </div>
@@ -981,6 +1007,55 @@
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Envio do formulário RSVP via AJAX (Formspree) sem redirecionamento
+    const rsvpForm = document.getElementById('rsvpForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (rsvpForm) {
+      rsvpForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Enviando...';
+        formStatus.className = 'form-status-message';
+        formStatus.innerText = '';
+
+        const formData = new FormData(rsvpForm);
+
+        try {
+          const response = await fetch(rsvpForm.action, {
+            method: rsvpForm.method,
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            formStatus.innerText = 'Presença confirmada com sucesso! Agradecemos o carinho.';
+            formStatus.classList.add('success');
+            rsvpForm.reset();
+            if (companionsList) companionsList.innerHTML = '';
+          } else {
+            const data = await response.json();
+            if (Object.hasOwn(data, 'errors')) {
+              formStatus.innerText = data.errors.map(error => error.message).join(', ');
+            } else {
+              formStatus.innerText = 'Ocorreu um erro ao enviar a confirmação. Tente novamente.';
+            }
+            formStatus.classList.add('error');
+          }
+        } catch (error) {
+          formStatus.innerText = 'Ocorreu um erro de conexão. Tente novamente mais tarde.';
+          formStatus.classList.add('error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'Confirmar Presença';
+        }
+      });
+    }
   </script>
 </body>
 </html>
