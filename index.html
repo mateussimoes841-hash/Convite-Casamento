@@ -199,7 +199,7 @@
     }
 
     /* =========================================================
-       CARROSSEL MANUAL DE FOTOS COM TAG PICTURE
+       CARROSSEL MANUAL DE FOTOS RESPONSIVO
        ========================================================= */
     .carousel-container {
       width: min(100%, 900px);
@@ -219,16 +219,11 @@
       transition: transform 0.4s ease-in-out;
     }
 
-    .carousel-slide picture {
-      width: 100%;
-      height: 100%;
-      flex-shrink: 0;
-    }
-
     .carousel-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      flex-shrink: 0;
     }
 
     .carousel-btn {
@@ -728,35 +723,14 @@
           17 de Dezembro de 2026 · 18:00h
         </p>
 
-        <!-- CARROSSEL DE FOTOS COM IMAGENS INDIVIDUAIS PARA MOBILE E DESKTOP -->
+        <!-- CARROSSEL DE FOTOS RESPONSIVO -->
         <div class="carousel-container">
           <div class="carousel-slide" id="carouselSlide">
-            
-            <picture>
-              <source media="(max-width: 600px)" srcset="karen&mateus-capa-mobile.jpg">
-              <img src="karen&mateus-capa.jpg" alt="Foto 1 de Karen Castro e Mateus Simões">
-            </picture>
-
-            <picture>
-              <source media="(max-width: 600px)" srcset="karen&mateus-2-mobile.jpg">
-              <img src="karen&mateus-2.jpg" alt="Foto 2 de Karen Castro e Mateus Simões">
-            </picture>
-
-            <picture>
-              <source media="(max-width: 600px)" srcset="karen&mateus-3-mobile.jpg">
-              <img src="karen&mateus-3.jpg" alt="Foto 3 de Karen Castro e Mateus Simões">
-            </picture>
-
-            <picture>
-              <source media="(max-width: 600px)" srcset="karen&mateus-4-mobile.jpg">
-              <img src="karen&mateus-4.jpg" alt="Foto 4 de Karen Castro e Mateus Simões">
-            </picture>
-
-            <picture>
-              <source media="(max-width: 600px)" srcset="foto5-mobile.jpg">
-              <img src="foto5.jpg" alt="Foto 5 de Karen Castro e Mateus Simões">
-            </picture>
-
+            <img src="karen&mateus-capa.jpg" alt="Foto 1 de Karen Castro e Mateus Simões">
+            <img src="karen&mateus-2.jpg" alt="Foto 2 de Karen Castro e Mateus Simões">
+            <img src="karen&mateus-3.jpg" alt="Foto 3 de Karen Castro e Mateus Simões">
+            <img src="karen&mateus-4.jpg" alt="Foto 4 de Karen Castro e Mateus Simões">
+            <img src="foto5.jpg" alt="Foto 5 de Karen Castro e Mateus Simões">
           </div>
 
           <button type="button" class="carousel-btn prev-btn" id="prevBtn" aria-label="Foto anterior">&#10094;</button>
@@ -923,7 +897,7 @@
 
     // Carrossel manual de fotos
     const slide = document.getElementById('carouselSlide');
-    const items = slide ? slide.querySelectorAll('picture') : [];
+    const items = slide ? slide.querySelectorAll('img') : [];
     let currentIndex = 0;
 
     function updateCarousel() {
