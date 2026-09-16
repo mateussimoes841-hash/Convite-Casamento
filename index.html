@@ -978,25 +978,46 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Adicionar/Remover Acompanhantes
+    // Adicionar/Remover Acompanhantes (com Limite)
+    const MAX_ACOMPANHANTES = 3; // Altere este número para o limite que desejar
+
     const addCompanionBtn = document.getElementById('addCompanionBtn');
     const companionsList = document.getElementById('companionsList');
 
     if (addCompanionBtn && companionsList) {
       addCompanionBtn.addEventListener('click', () => {
+        const totalAtuais = companionsList.querySelectorAll('.companion-row').length;
+
+        // Checa o limite antes de adicionar
+        if (totalAtuais >= MAX_ACOMPANHANTES) {
+          alert(`O limite é de até ${MAX_ACOMPANHANTES} acompanhantes por confirmação.`);
+          return;
+        }
+
         const row = document.createElement('div');
         row.className = 'companion-row';
         row.innerHTML = `
           <input type="text" name="acompanhante[]" placeholder="Nome do acompanhante" required>
           <button type="button" class="companion-remove" aria-label="Remover acompanhante">&times;</button>
         `;
+
+        // Evento para remover acompanhante
         row.querySelector('.companion-remove').addEventListener('click', () => {
           row.remove();
+          // Exibe o botão novamente se estiver abaixo do limite
+          if (companionsList.querySelectorAll('.companion-row').length < MAX_ACOMPANHANTES) {
+            addCompanionBtn.style.display = 'inline-block';
+          }
         });
+
         companionsList.appendChild(row);
+
+        // Oculta o botão se atingiu o limite exato
+        if (companionsList.querySelectorAll('.companion-row').length >= MAX_ACOMPANHANTES) {
+          addCompanionBtn.style.display = 'none';
+        }
       });
     }
-
     // Animação ao rolar (Reveal)
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
